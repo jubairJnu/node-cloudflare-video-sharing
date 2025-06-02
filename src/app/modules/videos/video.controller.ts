@@ -41,4 +41,7 @@ router.post("/upload", uploadVideo.single("video"), async (req, res) => {
   }
 });
 
+
+// router.get("/")
+
 export const VideoRoutes = router;

@@ -1,9 +1,14 @@
 import multer from "multer";
 import path from "path";
+import fs from "fs";
+
+const rawDir = "uploads/raw/";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/raw/");
+    // Ensure the directory exists
+    fs.mkdirSync(rawDir, { recursive: true });
+    cb(null, rawDir);
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
