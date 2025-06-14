@@ -1,4 +1,4 @@
-// src/app.ts
+
 
 import express from "express";
 import cors from "cors";
@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 import { VideoRoutes } from "./app/modules/videos/video.controller";
 import { connectDB } from "./lib/db/connect";
 
-// Load env variables
+
 dotenv.config();
 
 const app = express();
